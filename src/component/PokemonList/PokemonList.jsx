@@ -14,7 +14,7 @@ function PokemonList() {
   const [nextUrl, setnextUrl] = useState("");
   const [prevsUrl, setprevsUrl] = useState("");
   async function pokemonDownload() {
-    setisLoadig(true)
+    setisLoadig(true);
     const response = await axios.get(pokedexUrl);
 
     const pokemonData = response.data.results;
@@ -53,7 +53,7 @@ function PokemonList() {
         {isLoading
           ? "Loading..."
           : pokemonList.map((p) => (
-              <Showpokemon name={p.name} image={p.image} key={p.id} />
+              <Showpokemon name={p.name} image={p.image} key={p.id} id={p.id} />
             ))}
       </div>
       <div id="control-button">
